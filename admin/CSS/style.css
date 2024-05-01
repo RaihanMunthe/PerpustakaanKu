@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap");
+
+:root {
+  --primary: #fff;
+  --bg: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "poppin", sans-serif;
+  background-color: var(--bg);
+  color: rgb(171, 213, 247);
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  /* buat bg logo */
+  background-color: rgba(119, 195, 227, 0.8);
+  border-bottom: 1px solid paleturquoise;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+}
+
+/* buat atur tulisan perpustakaanku */
+.navbar .navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #64a8b7;
+  font-style: initial;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+/* untuk tulisan beranda dll */
+.navbar .navbar-nav a {
+  color: #fff;
+  font-weight: 600;
+  /* inline-block agar tidak turun kebawah apabila dikasi margin */
+  display: inline-block;
+  font-size: 1, 4rem;
+  margin: 0 1rem;
+}
+
+/* buat waktu di klik tulisan beranda dll berubah warna */
+.navbar .navbar-nav a:hover {
+  color: var(--primary);
+}
+
+/* garis bawah di tulisan beranda */
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--primary);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+/* membuat garis bawah muncul ketika di sorot doang */
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+.navbar .navbar-extra a {
+  color: #64a8b7;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+}
+
+/* agar membuat tombol menu tidak muncul dahulu */
+#menu {
+  display: none;
+}
+
+/*Books*/
+
+section {
+  display: flex;
+  background: #fff;
+  min-height: 100vh;
+}
+
+img {
+  width: 220px;
+  position: sticky;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(30, 29, 29);
+  border-radius: 1rem;
+  margin-right: 3rem;
+  margin-left: 4rem;
+  top: 220px;
+  margin-bottom: 7rem;
+}
+
+.card-body {
+  color: black;
+}
+
+.card-body h2 {
+  position: absolute;
+  font-size: 29px;
+  top: 100px;
+  left: 35px;
+  color: black;
+  margin-top: 0px;
+  font-style: normal;
+  font: 300;
+  font-family: "Platypi", serif;
+}
+
+.card-body p {
+  position: absolute;
+  font-size: 15px;
+  top: 200px;
+  color: black;
+  font-style: normal;
+  left: 300px;
+  font-family: "Platypi", serif;
+  margin-right: 6rem;
+  text-align: justify;
+}
+
+.card-body h1 {
+  position: absolute;
+  font-size: 18px;
+  top: 170px;
+  color: black;
+  font-style: normal;
+  left: 300px;
+  font-family: "Platypi", serif;
+  margin-right: 6rem;
+  text-align: justify;
+}
+
+/* footer */
+footer {
+  background-color: #64a8b7;
+  text-align: center;
+  padding: 0 0 1rem;
+  bottom: 0;
+  width: 100%;
+}
+
+footer .sosials {
+  padding: 1rem 0;
+}
+
+footer .sosials a {
+  color: #089da1;
+  margin: 1rem;
+}
+
+footer .sosials a:hover {
+  color: #fff;
+}
+
+footer .links {
+  margin-bottom: 1.4rem;
+}
+
+footer .links a:hover {
+  color: #089da1;
+}
+
+footer .links a {
+  color: #fff;
+  padding: 0.7rem 1rem;
+  font-weight: bold;
+}
+
+footer .credit {
+  font-size: 1rem;
+}
+
+footer .credit a {
+  color: #089da1;
+  font-weight: 700;
+}
+
+/* Media Queries */
+
+/* laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 62%;
+  }
+
+  #menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #c2e8f876;
+    width: 20rem;
+    height: 100vh;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: #64a8b7;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.3);
+  }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
